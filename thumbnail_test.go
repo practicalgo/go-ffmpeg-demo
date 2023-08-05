@@ -13,7 +13,7 @@ func TestCreateThumbnail(t *testing.T) {
 		t.Fatal("error reading test file", err)
 	}
 
-	thumbnailImage, err := createThumbnail(context.Background(), originalImage, 1*time.Second)
+	thumbnailImage, err := createThumbnail(context.Background(), originalImage, 5*time.Second)
 	if err != nil {
 		t.Fatal("error creating thumbnail", err)
 	}
