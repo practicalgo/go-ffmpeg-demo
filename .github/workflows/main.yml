@@ -16,6 +16,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - uses: ConorMacBride/install-package@v1
+        with:
+          brew: ffmpeg
+          apt: ffmpeg
+          choco: ffmpeg
+
     - name: Set up Go
       uses: actions/setup-go@v3
       with:

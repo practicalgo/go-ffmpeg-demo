@@ -38,7 +38,6 @@ func createThumbnail(
 
 	go func() {
 		defer stdin.Close()
-		log.Println("writing input data to pipe..")
 		_, err = io.WriteString(stdin, string(inputData))
 	}()
 
