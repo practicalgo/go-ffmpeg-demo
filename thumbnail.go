@@ -46,6 +46,7 @@ func createThumbnail(
 
 	// ffmpeg will work with stdin and stdout
 	// we set those up next
+	var cmdOutput []byte
 	outputFile := path.Join(tmpDir, "thumbnail-image-id")
 	cmd := exec.CommandContext(
 		ctx,
@@ -55,9 +56,9 @@ func createThumbnail(
 	go func() {
 
 		log.Println("creating thumbnail of a specified image using ffmpeg..")
-		output, err := cmd.CombinedOutput()
+		cmdOutput, err = cmd.CombinedOutput()
 		if err != nil {
-			log.Println("error creating thumbnail", string(output))
+			log.Println("error creating thumbnail", string(cmdOutput))
 		}
 
 		ch <- err
@@ -70,6 +71,7 @@ func createThumbnail(
 	}
 
 	if err != nil {
+		log.Println("Error from goroutine", string(cmdOutput))
 		return nil, err
 	}
 
