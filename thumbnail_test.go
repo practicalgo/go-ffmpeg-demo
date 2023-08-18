@@ -1,10 +1,8 @@
 package main
 
 import (
-	"context"
 	"os"
 	"testing"
-	"time"
 )
 
 func TestCreateThumbnail(t *testing.T) {
@@ -13,8 +11,7 @@ func TestCreateThumbnail(t *testing.T) {
 		t.Fatal("error reading test file", err)
 	}
 
-	// the 30*time.Second timeout is needed for Windows runners in CI
-	thumbnailImage, err := createThumbnail(context.Background(), originalImage, 30*time.Second)
+	thumbnailImage, err := createThumbnail(originalImage)
 	if err != nil {
 		t.Fatal("error creating thumbnail", err)
 	}

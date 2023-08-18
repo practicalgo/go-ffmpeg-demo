@@ -1,10 +1,8 @@
 package main
 
 import (
-	"context"
 	"log"
 	"os"
-	"time"
 )
 
 func main() {
@@ -17,11 +15,7 @@ func main() {
 		log.Fatal("error reading input", err)
 	}
 
-	thumbnailData, err := createThumbnail(
-		context.Background(),
-		inputData,      // image bytes to create thumbnails
-		10*time.Second, // command timeout
-	)
+	thumbnailData, err := createThumbnail(inputData)
 	if err != nil {
 		log.Fatal(err)
 	}
