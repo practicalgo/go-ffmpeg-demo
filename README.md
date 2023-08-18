@@ -10,5 +10,7 @@ Linux and Windows Server 2019 and 2022. See the
 [GitHub workflow runs](https://github.com/practicalgo/go-ffmpeg-demo/actions/workflows/main.yml) 
 if you want to learn more.
 
-[See blog post]() to learn more about the implementation details.
+## Implementation
+
+See [thumbnail.go](./thumbnail.go) for the execution of `ffmpeg`. 
 
