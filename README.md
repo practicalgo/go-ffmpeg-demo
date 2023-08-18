@@ -14,3 +14,8 @@ if you want to learn more.
 
 See [thumbnail.go](./thumbnail.go) for the execution of `ffmpeg`. 
 
+## Improvements
+
+- Use context to ensure that we don't wait for ever for `ffmpeg` to complete. See [this commit](https://github.com/practicalgo/go-ffmpeg-demo/commit/efc70f0514d9cc02f896f354b4dd9da1a2afac9a) for one way to do so. I removed the change to simply this demo itself.
+- Update test to verify the dimensions of the thumbnail to be created
+
